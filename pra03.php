@@ -156,6 +156,27 @@ for($i=0;$i<5;$i++){
 
 ?>
 
+<h2>矩形+對角線(內圈*)</h2>
+ <?php 
+for($i=0;$i<5;$i++){
+    for($j=0;$j<5;$j++){
+      if($i==0 || $i==4){
+         echo "*";
+      }else if($j==0 || $j==4){
+         echo "*";
+      }else if($i==$j || $j==(4-$i)){
+         echo "*";
+
+      }else{
+            echo "&nbsp;";
+         }
+      } 
+      echo "<br>";
+
+      }
+
+?>
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
