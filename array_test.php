@@ -17,9 +17,7 @@
 
      $students=[$judy,$amo,$john,$Merry]
 
-     foreach($header as $value){
-        echo "<td>$value</td>";
-     }
+ 
 ?>
 
 
