@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>陣列</h1>
+    <h1>陣列習題</h1>
     <div>[ 'a' . 'b' , 'good' , 'sad' , 'john' ,123,999]</div>
     <?php
 $a=['a' , 'b' , 'good' , 'sad' , 'john' ,123,999, 'good' , 'sad' , 'john' ,123,999, 'good' , 'sad' , 'john' ];
@@ -46,7 +46,6 @@ $keys=array_keys($b);
 3.用迴圈來跑key陣列
 4.再把key陣列內容印出來
 */
-
 
 ?>
 </body>
