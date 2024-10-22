@@ -194,7 +194,9 @@ echo "</pre>";
     }
     ?>
 </table>
-<h2></h2>
+
+<h2>陣列-99乘法表</h2>
+
 <!-- ul>li*  -->
 <ul>
   <li>以迴圈的方式產生一個九九乘法表</li>
@@ -205,6 +207,7 @@ echo "</pre>";
 
 <?php
 $nine=[];
+echo "<table class='nine'>";
 
 for($i=1;$i<=9;$i++){
     for($j=1;$j<=9;$j++){
@@ -228,24 +231,79 @@ if($counter==9){
 echo "<hr>";
 
 // 另一種解法- 陣列的索引值每除以9餘數8時 就跳行! 
+
+echo "<hr>";
+echo "<table>";
 foreach($nine as $idx => $n){
     if($idx%9==8){
-        echo $n . "<br>";
-    }else{
-        echo $n . ",";
+        echo "<td>$n</td></tr>";
+    
+    }else if($idx%9==0)
+        echo "<tr><td>$n</td>";
+    
+    else{
+        echo "<td>$n</td>";
     }
 }
+echo "</table>";    
 
-/* echo "<table>";
-for($i=1;$j<=9;$i++){
-echo "<td>";
-echo "$i x $j = ";
-echo $i*$j;
-echo "</td>;
+echo "<hr>";
+echo "<table>";
+foreach($nine as $idx => $n){
+    // 用"="將$n等式兩邊的值分開, 即變成一個陣列 ex: [1x2 , 2] 取其索引值1時的value為我們所需!   
+    $v=explode("=",$n)[1];
+
+    if($idx%9==8){
+        echo "<td>$v</td></tr>";
+
+    }else if($idx%9==0)
+        echo "<tr><td>$v</td>";
+    
+    else{
+        echo "<td>$v</td>";
+    }
 }
-echo "</tr>";
+    echo "</table>";    
+
+echo "<hr>";
+echo "<table>";
+
+foreach($nine as $idx => $n){
+    if($idx%9==8){
+        echo "<td>$n</td></tr>";
+    
+    }else if($idx%9==0)
+        echo "<tr><td>$n</td>";
+    
+    else{
+        echo "<td>$n</td>";
+    }
 }
-echo "</table>"; */
+echo "</table>";
+
+echo "<hr>";
+$nine3=[];
+
+for($i=1;$i<=9;$i++){
+    for($j=1;$j<=9;$j++){
+        $nine3[]=['formula'=>"$i x $j",'value'=>$i*$j];
+    }
+    }
+
+    echo "<pre>";
+    print_r($nine3);
+    echo "</pre>";
+
+    echo "<hr>";
+
+    foreach($nine3 as $idx =>$item){
+        if($idx%9==8){
+            echo $item['formula'] . " = ".$item['value']. "<br>";
+        }else{
+            echo $item['formula'] . " = ".$item['value'];
+    
+        }
+    }
 
 ?>
 
